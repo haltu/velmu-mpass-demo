@@ -1,0 +1,14 @@
+{% extends "dreamcards:dreamcards/base.html" %}
+{% load static compress %}
+
+{% block styles %}
+  {{ block.super }}
+  {% compress css %}
+    <style>
+      @import 'dreamcards/css/sass-utils.scss';
+      @import 'dreamcards/css/sass-config.scss';
+      @import 'dreamcards/css/sass-config-custom';
+      @import 'dreamcards/css/theme';
+    </style>
+  {% endcompress %}
+{% endblock %}

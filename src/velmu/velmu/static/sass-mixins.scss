@@ -1,0 +1,76 @@
+// ---- CSS3 SASS MIXINS ----
+// https://github.com/madr/css3-sass-mixins
+//  
+//  Copyright (C) 2011 by Anders Ytterström
+//  
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
+//
+
+
+/***
+
+  This is a fork by Haltu Oy.
+  Just removed all the stuff we don't need.
+
+***/
+
+@mixin linear-gradient($from, $to) {
+  background-image: -moz-linear-gradient(top, $from 0%, $to 100%);
+  background-image: -webkit-linear-gradient(top, $from 0%, $to 100%);
+  background-image: -o-linear-gradient(top, $from 0%, $to 100%);
+  background-image: -ms-linear-gradient(top, $from 0%, $to 100%);
+  background-image: linear-gradient(to bottom, $from 0%, $to 100%);
+}
+@mixin border-radius($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  -moz-background-clip: padding; 
+  -webkit-background-clip: padding-box; 
+  background-clip: padding-box;
+}
+@mixin background-size ($value) {
+  -webkit-background-size: $value;
+  background-size: $value;
+}
+@mixin box-shadow ($value) {
+  -moz-box-shadow: $value;
+  -webkit-box-shadow: $value;
+  box-shadow: $value;
+}
+@mixin box-sizing($value) {
+  -moz-box-sizing: $value;
+  -webkit-box-sizing: $value;
+  box-sizing: $value;
+}
+@mixin transform ($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+@mixin transition ($value) {
+  -moz-transition: $value;
+  -o-transition: $value;
+  -ms-transition: $value;
+  -webkit-transition: $value;
+  transition: $value;
+}
+

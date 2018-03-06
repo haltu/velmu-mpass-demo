@@ -1,0 +1,15 @@
+{% extends "dreamcards:dreamcards/desktop.html" %}
+{% load i18n %}
+
+{% block sidebar_buttons %}
+  <div class="sidebar-button logo"><div class="logo-container"></div></div>
+  <div class="sidebar-button" hammer-tap="activeDrawer = activeDrawer === 3 ? 0 : 3" ng-class="{active: activeDrawer === 3}"><i class="fa fa-th-large"></i></div>
+  <div class="sidebar-button" hammer-tap="activeDrawer = activeDrawer === 4 ? 0 : 4" ng-class="{active: activeDrawer === 4}"><i class="fa fa-bookmark"></i></div>
+  <div class="sidebar-button sidebar-button-profile" hammer-tap="activeDrawer = activeDrawer === 2 ? 0 : 2" ng-class="{active: activeDrawer === 2}"><i class="fa fa-user"></i></div>
+  <div class="main-sidebar-bottom">
+    <div class="sidebar-button bin">
+      <i class="fa icon-custom-trash-top"></i>
+      <i class="fa icon-custom-recycle-bottom"></i>
+    </div>
+  </div>
+{% endblock %}
