@@ -40,6 +40,7 @@ COMPRESS_HTML = True
 BROKER_HEARTBEAT = 0
 
 AUTHENTICATION_BACKENDS = (
+  'velmu.authbackends.MPASSBackend',
   'dreamsso.authbackend.local.SingleDatabaseBackend',
 )
 
