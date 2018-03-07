@@ -1,0 +1,387 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-16 17:50+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: dream-cards/dreamcards/admin.py:18
+msgid "System Provided"
+msgstr "Järjestelmän omistama"
+
+#: dream-cards/dreamcards/admin.py:23
+msgid "True"
+msgstr "Kyllä"
+
+#: dream-cards/dreamcards/admin.py:24
+msgid "False"
+msgstr "Ei"
+
+#: dream-cards/dreamcards/admin.py:62
+msgid "Attached the selected card to the desktop of all users who can view it."
+msgstr ""
+
+#: dream-cards/dreamcards/admin.py:64
+#, python-format
+msgid "Attached %(count)d cards to the desktop of all users who can view them."
+msgstr ""
+
+#: dream-cards/dreamcards/admin.py:67
+msgid "Attach card(s) to the desktop of every user"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:23
+msgid "grey"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:24
+msgid "blue"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:25
+msgid "red"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:26
+msgid "green"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:27
+msgid "orange"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:28
+msgid "pink"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:29
+msgid "purple"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:62 dream-cards/dreamcards/models.py:183
+#: dream-cards/dreamcards/models.py:246
+msgid "Title"
+msgstr "Otsikko"
+
+#: dream-cards/dreamcards/models.py:63
+msgid "URL"
+msgstr "URL"
+
+#: dream-cards/dreamcards/models.py:64 dream-cards/dreamcards/models.py:157
+msgid "Thumbnail"
+msgstr "Kuva"
+
+#: dream-cards/dreamcards/models.py:67 dream-cards/dreamcards/models.py:193
+msgid "Category"
+msgstr "Kategoria"
+
+#: dream-cards/dreamcards/models.py:68 dream-cards/dreamcards/models.py:184
+#: dream-cards/dreamcards/models.py:247
+msgid "Owner"
+msgstr "Omistaja"
+
+#: dream-cards/dreamcards/models.py:68
+msgid "Card with no owner is a system card visible to everyone."
+msgstr "Kortti ilman omistajaa on systeemin kortti joka näkyy kaikille."
+
+#: dream-cards/dreamcards/models.py:71
+msgid "Card type"
+msgstr "Kortin tyyppi"
+
+#: dream-cards/dreamcards/models.py:72 dream-cards/dreamcards/models.py:187
+msgid "Language"
+msgstr "Kieli"
+
+#: dream-cards/dreamcards/models.py:72
+msgid ""
+"If a language is selected, card is displayed ONLY if user is using that "
+"language."
+msgstr ""
+"Jos kortin kieli on valittuna, kortti näkyy ainoastaan jos käyttäjä on "
+"valinnut kyseisen kielen käyttöliittymästä."
+
+#: dream-cards/dreamcards/models.py:74
+msgid "Shared to groups"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:74
+msgid "Groups this card is shared to"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:76
+msgid "Shared to users"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:76
+msgid "Users this card is directly shared to"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:77
+msgid "Default for new users"
+msgstr "Oletuskortti uusille käyttäjille"
+
+#: dream-cards/dreamcards/models.py:77
+msgid "Attach this card automatically in a new user's desktop"
+msgstr "Liitä tämä kortti automaattisesti uusien käyttäjien työpöydälle"
+
+#: dream-cards/dreamcards/models.py:78
+msgid "Permission"
+msgstr "Näkyvyys"
+
+#: dream-cards/dreamcards/models.py:78
+msgid ""
+"Limit visibility of card to users with permission. If a permission is "
+"selected, ONLY users with that permission can see the card."
+msgstr "Rajoita kortin näkyvyys käyttäjille joilla on tämä oikeus. Jos oikeutta ei ole valittu, "
+"kortti näkyy kaikille käyttäjille."
+
+#: dream-cards/dreamcards/models.py:85 dream-cards/dreamcards/models.py:219
+msgid "Card"
+msgstr "Kortti"
+
+#: dream-cards/dreamcards/models.py:86 dream-cards/dreamcards/models.py:208
+msgid "Cards"
+msgstr "Kortit"
+
+#: dream-cards/dreamcards/models.py:184
+msgid "Category with no owner is a system category visible to everyone."
+msgstr ""
+"Kategoria ilman omistajaa on systeemin kategoria joka näkyy kaikille "
+"käyttäjille."
+
+#: dream-cards/dreamcards/models.py:187
+msgid ""
+"If a language is selected, category is displayed ONLY if user is using that "
+"language."
+msgstr ""
+"Jos kategorian kieli on valittuna, kategoria näkyy ainoastaan jos käyttäjä "
+"on valinnut kyseisen kielen käyttöliittymästä."
+
+#: dream-cards/dreamcards/models.py:194
+msgid "Categories"
+msgstr "Kategoriat"
+
+#: dream-cards/dreamcards/models.py:202
+msgid "Amount of cards"
+msgstr "Korttien lukumäärä"
+
+#: dream-cards/dreamcards/models.py:206
+msgid "Cards in this category"
+msgstr "Kortit kategoriassa"
+
+#: dream-cards/dreamcards/models.py:220 dream-cards/dreamcards/models.py:255
+msgid "Page"
+msgstr "Sivu"
+
+#: dream-cards/dreamcards/models.py:222
+msgid "Size X"
+msgstr "Koko X"
+
+#: dream-cards/dreamcards/models.py:223
+msgid "Size Y"
+msgstr "Koko Y"
+
+#: dream-cards/dreamcards/models.py:224
+msgid "Order"
+msgstr "Järjestys"
+
+#: dream-cards/dreamcards/models.py:256
+msgid "Pages"
+msgstr "Sivut"
+
+#: dream-cards/dreamcards/models.py:264
+msgid "Start page"
+msgstr "Aloitussivu"
+
+#: dream-cards/dreamcards/models.py:279
+msgid "UserGroup"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:280
+msgid "UserGroups"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/base.html:31
+msgid "#service-name"
+msgstr "Velmu"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:4
+msgid "Desktop"
+msgstr "Työpöytä"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:32
+msgid "Log out"
+msgstr "Kirjaudu ulos"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:40
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:223
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:243
+msgid "Are you sure?"
+msgstr "Oletko varma?"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:41
+msgid "Yes"
+msgstr "Kyllä"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:42
+msgid "No"
+msgstr "Ei"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:52
+msgid "Select language"
+msgstr "Valitse kieli"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:63
+msgid "Choose desktop background"
+msgstr "Valitse taustakuva"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:85
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:102
+msgid "Search"
+msgstr "Hae"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:89
+msgid "System cards"
+msgstr "Velmu kortit"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:95
+msgid "Shared with me"
+msgstr "Jaettu minulle"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:106
+msgid "My cards"
+msgstr "Omat kortit"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:138
+msgid "Edit Category"
+msgstr "Muokkaa kategoriaa"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:139
+msgid "Add card"
+msgstr "Lisää kortti"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:146
+msgid "Category title"
+msgstr "Kategorian otsikko"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:147
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:158
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:202
+msgid "Enter a title..."
+msgstr "Syötä otsikko..."
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:149
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:216
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:236
+msgid "Save"
+msgstr "Tallenna"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:150
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:169
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:217
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:225
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:237
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:245
+msgid "Cancel"
+msgstr "Peruuta"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:157
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:201
+msgid "Card title"
+msgstr "Kortin otsikko"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:161
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:205
+msgid "Card URL"
+msgstr "Kortin nettiosoite"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:162
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:206
+msgid "Enter an URL..."
+msgstr "Syötä URL..."
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:165
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:209
+msgid "Card thumbnail"
+msgstr "Kortin kuva"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:168
+msgid "Create"
+msgstr "Luo"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:190
+msgid "Edit"
+msgstr "Muokkaa"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:191
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:232
+msgid "Share"
+msgstr "Jaa kortti"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:192
+msgid "Attach"
+msgstr "Lisää työpöydälle"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:193
+msgid "Detach"
+msgstr "Poista työpöydältä"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:194
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:244
+msgid "Delete"
+msgstr "Poista"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:214
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:224
+msgid "Remove thumbnail"
+msgstr "Poista kuva"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:233
+msgid "Find groups"
+msgstr "Etsi ryhmiä"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:234
+msgid "Find users"
+msgstr "Etsi käyttäjiä"
+
+#: dream-cards/dreamcards/templates/dreamcards/login_failed.html:4
+#: dream-cards/dreamcards/templates/dreamcards/login_failed.html:8
+msgid "Login failed"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/login_failed.html:10
+msgid "Please try again tomorrow."
+msgstr ""
+
+#: haltu-djangosaml2/djangosaml2/templates/djangosaml2/error.html:9
+msgid "Error"
+msgstr ""
+
+#: haltu-djangosaml2/djangosaml2/templates/djangosaml2/error.html:10
+msgid "We are sorry but there was an error in your session. Please try again"
+msgstr ""
+
+#: haltu-djangosaml2/djangosaml2/templates/djangosaml2/timeout_error.html:9
+msgid "Timeout error"
+msgstr ""
+
+#: haltu-djangosaml2/djangosaml2/templates/djangosaml2/timeout_error.html:10
+msgid "We are sorry but your session has timed out. Please try again"
+msgstr ""
+
+#: haltu-utils/hutils/admin_list_filters.py:11
+msgid "user"
+msgstr ""

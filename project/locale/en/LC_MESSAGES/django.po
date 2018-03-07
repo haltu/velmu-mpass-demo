@@ -1,0 +1,379 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-16 17:49+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: dream-cards/dreamcards/admin.py:18
+msgid "System Provided"
+msgstr ""
+
+#: dream-cards/dreamcards/admin.py:23
+msgid "True"
+msgstr ""
+
+#: dream-cards/dreamcards/admin.py:24
+msgid "False"
+msgstr ""
+
+#: dream-cards/dreamcards/admin.py:62
+msgid "Attached the selected card to the desktop of all users who can view it."
+msgstr ""
+
+#: dream-cards/dreamcards/admin.py:64
+#, python-format
+msgid "Attached %(count)d cards to the desktop of all users who can view them."
+msgstr ""
+
+#: dream-cards/dreamcards/admin.py:67
+msgid "Attach card(s) to the desktop of every user"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:23
+msgid "grey"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:24
+msgid "blue"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:25
+msgid "red"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:26
+msgid "green"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:27
+msgid "orange"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:28
+msgid "pink"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:29
+msgid "purple"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:62 dream-cards/dreamcards/models.py:183
+#: dream-cards/dreamcards/models.py:246
+msgid "Title"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:63
+msgid "URL"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:64 dream-cards/dreamcards/models.py:157
+msgid "Thumbnail"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:67 dream-cards/dreamcards/models.py:193
+msgid "Category"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:68 dream-cards/dreamcards/models.py:184
+#: dream-cards/dreamcards/models.py:247
+msgid "Owner"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:68
+msgid "Card with no owner is a system card visible to everyone."
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:71
+msgid "Card type"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:72 dream-cards/dreamcards/models.py:187
+msgid "Language"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:72
+msgid ""
+"If a language is selected, card is displayed ONLY if user is using that "
+"language."
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:74
+msgid "Shared to groups"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:74
+msgid "Groups this card is shared to"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:76
+msgid "Shared to users"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:76
+msgid "Users this card is directly shared to"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:77
+msgid "Default for new users"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:77
+msgid "Attach this card automatically in a new user's desktop"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:78
+msgid "Permission"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:78
+msgid ""
+"Limit visibility of card to users with permission. If a permission is "
+"selected, ONLY users with that permission can see the card."
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:85 dream-cards/dreamcards/models.py:219
+msgid "Card"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:86 dream-cards/dreamcards/models.py:208
+msgid "Cards"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:184
+msgid "Category with no owner is a system category visible to everyone."
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:187
+msgid ""
+"If a language is selected, category is displayed ONLY if user is using that "
+"language."
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:194
+msgid "Categories"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:202
+msgid "Amount of cards"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:206
+msgid "Cards in this category"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:220 dream-cards/dreamcards/models.py:255
+msgid "Page"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:222
+msgid "Size X"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:223
+msgid "Size Y"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:224
+msgid "Order"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:256
+msgid "Pages"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:264
+msgid "Start page"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:279
+msgid "UserGroup"
+msgstr ""
+
+#: dream-cards/dreamcards/models.py:280
+msgid "UserGroups"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/base.html:31
+msgid "#service-name"
+msgstr "Velmu"
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:4
+msgid "Desktop"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:32
+msgid "Log out"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:40
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:223
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:243
+msgid "Are you sure?"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:41
+msgid "Yes"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:42
+msgid "No"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:52
+msgid "Select language"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:63
+msgid "Choose desktop background"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:85
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:102
+msgid "Search"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:89
+msgid "System cards"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:95
+msgid "Shared with me"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:106
+msgid "My cards"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:138
+msgid "Edit Category"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:139
+msgid "Add card"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:146
+msgid "Category title"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:147
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:158
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:202
+msgid "Enter a title..."
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:149
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:216
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:236
+msgid "Save"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:150
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:169
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:217
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:225
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:237
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:245
+msgid "Cancel"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:157
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:201
+msgid "Card title"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:161
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:205
+msgid "Card URL"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:162
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:206
+msgid "Enter an URL..."
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:165
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:209
+msgid "Card thumbnail"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:168
+msgid "Create"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:190
+msgid "Edit"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:191
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:232
+msgid "Share"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:192
+msgid "Attach"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:193
+msgid "Detach"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:194
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:244
+msgid "Delete"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:214
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:224
+msgid "Remove thumbnail"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:233
+msgid "Find groups"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/desktop.html:234
+msgid "Find users"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/login_failed.html:4
+#: dream-cards/dreamcards/templates/dreamcards/login_failed.html:8
+msgid "Login failed"
+msgstr ""
+
+#: dream-cards/dreamcards/templates/dreamcards/login_failed.html:10
+msgid "Please try again tomorrow."
+msgstr ""
+
+#: haltu-djangosaml2/djangosaml2/templates/djangosaml2/error.html:9
+msgid "Error"
+msgstr ""
+
+#: haltu-djangosaml2/djangosaml2/templates/djangosaml2/error.html:10
+msgid "We are sorry but there was an error in your session. Please try again"
+msgstr ""
+
+#: haltu-djangosaml2/djangosaml2/templates/djangosaml2/timeout_error.html:9
+msgid "Timeout error"
+msgstr ""
+
+#: haltu-djangosaml2/djangosaml2/templates/djangosaml2/timeout_error.html:10
+msgid "We are sorry but your session has timed out. Please try again"
+msgstr ""
+
+#: haltu-utils/hutils/admin_list_filters.py:11
+msgid "user"
+msgstr ""

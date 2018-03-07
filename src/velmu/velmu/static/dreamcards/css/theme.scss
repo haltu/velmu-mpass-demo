@@ -1,0 +1,274 @@
+//
+// Default Theme
+//
+
+// Base
+
+body,
+input,
+textarea,
+button {
+  font-family: Montserrat, sans-serif;
+}
+
+// Backgrounds
+
+html,
+body {
+  background: transparent;
+}
+html {
+  background: #eee;
+}
+.background-choice-1 {
+  background: #eee;
+  z-index: -1;
+  &-btn {
+    background: #eee;
+    background: #eee url(/static/dreamcards/img/bg-1-preview.png) no-repeat center center;
+    background-size: cover;
+  }
+}
+.background-choice-1 body:before {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 50px;
+  bottom: 0;
+  height: 75px;
+  background: #b36500;
+  z-index: -1;
+}
+.background-choice-1 body:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 75px;
+  left: 50px;
+  top: 0;
+  bottom: 75px;
+  background: transparent url(/static/dreamcards/img/bg-1.png) no-repeat right bottom;
+  z-index: -1;
+}
+.background-choice-2 {
+  background: #A9E3D9;
+  background: #A9E3D9 url(/static/dreamcards/img/bg-2.jpg) no-repeat fixed left top;
+  &-btn {
+    background: #A9E3D9;
+    background: #A9E3D9 url(/static/dreamcards/img/bg-2-preview.png) no-repeat center center;
+    background-size: cover;
+  }
+}
+
+// Hide 3th and 4th choice
+.inline-drawer-grid-cell:nth-child(4),
+.inline-drawer-grid-cell:nth-child(5) {
+  display: none;
+}
+.background-choice-3,
+.background-choice-4 {
+  background: #eee;
+}
+
+// Sidebar
+
+.main-sidebar .sidebar-button.logo {
+  height: 100px;
+}
+.main-sidebar .sidebar-button.logo .logo-container {
+  background-size: contain;
+}
+.sidebar-search-field {
+  color: #fff;
+}
+.sidebar-search-field::-webkit-input-placeholder {
+  font-style: italic;
+  color: rgba(255,255,255,0.7);
+  opacity: 1;
+}
+.sidebar-search-field:-moz-placeholder {
+  font-style: italic;
+  color: rgba(255,255,255,0.7);
+  opacity: 1;
+}
+.sidebar-search-field::-moz-placeholder {
+  font-style: italic;
+  color: rgba(255,255,255,0.7);
+  opacity: 1;
+}
+.sidebar-search-field:-ms-input-placeholder {
+  font-style: italic;
+  color: rgba(255,255,255,0.7);
+  opacity: 1;
+}
+.inline-drawer-form .control-label {
+  text-transform: none;
+  font-weight: 400;
+  font-size: 14px;
+}
+.inline-drawer-action {
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.inline-drawer-action .fa {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 16px;
+  line-height: 14px;
+  width: 20px;
+  text-align: center;
+}
+.selectize-input {
+  vertical-align: top;
+  margin-bottom: 15px;
+}
+.selectize-control.single .selectize-input.input-active,
+.selectize-input {
+  background: $sb-inline-drawer-form-field-background;
+}
+.selectize-dropdown,
+.selectize-input,
+.selectize-input input {
+  font-size: 14px;
+  color: $sb-inline-drawer-form-field-color;
+}
+
+// Cards
+
+.main-content .packery {
+  padding: 20px 0 0 70px;
+}
+.main-content .grid-sizer {
+  margin-right: 20px;
+}
+.main-content .card-container {
+  margin: 0;
+}
+.main-content .card {
+  border: 0;
+  -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.2);
+  box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.2);
+}
+.main-content .card-icon {
+  top: 15px;
+  background: #fff;
+  width: 150px;
+  height: 125px;
+  max-width: auto;
+  min-width: 0;
+}
+.main-content .card-title {
+  font-weight: 400;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  padding: 0 10px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #fff;
+  color: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.main-content .card-title:after {
+  display: none;
+}
+
+//
+// Theme #2
+//
+
+.background-choice-2 .drawer {
+  color: $sb-drawer-color-2;
+  background: $sb-drawer-background-2;
+}
+.background-choice-2 .main-sidebar {
+  background: $sb-main-background-2;
+}
+.background-choice-2 .main-sidebar .sidebar-button {
+  color: $sb-main-button-color-2;
+}
+.background-choice-2 .main-sidebar .sidebar-button:hover,
+.background-choice-2 .main-sidebar .sidebar-button.active {
+  color: $sb-main-button-hover-color-2;
+  background: $sb-main-button-hover-background-2;
+}
+.background-choice-2 .main-sidebar .sidebar-button.bin:after {
+  background: $sb-main-button-bin-background-2;
+}
+.background-choice-2 [hm-drawer-item].selected {
+  background: $sb-drawer-item-selected-background-2;
+}
+.background-choice-2 [hm-drawer-heading] {
+  background: $sb-drawer-heading-background-2;
+  border-bottom: $sb-drawer-heading-border-bottom-2;
+}
+.background-choice-2 .drawer-item-button {
+  color: $sb-drawer-item-button-color-2;
+}
+.background-choice-2 .drawer-item.shared:before {
+  color: $sb-drawer-item-button-color-2;
+}
+.background-choice-2 .sidebar-search-field {
+  background: $sb-drawer-heading-background-2;
+  color: #fff;
+}
+.background-choice-2 .drawer-search-icon {
+  color: $sb-drawer-item-button-color-2;
+}
+.background-choice-2 .inline-drawer {
+  background-color: $sb-inline-drawer-background-color-2;
+  border-bottom: $sb-inline-drawer-border-bottom-2;
+}
+.background-choice-2 .inline-drawer:before {
+  border-top: $sb-inline-drawer-before-border-top-2;
+}
+.background-choice-2 .inline-drawer-form .form-control {
+  border: $sb-inline-drawer-form-field-border-2;
+  background: $sb-inline-drawer-form-field-background-2;
+  color: $sb-inline-drawer-form-field-color;
+}
+.background-choice-2 .inline-drawer-form .form-control:focus {
+  background: $sb-inline-drawer-form-field-focus-background-2;
+}
+.background-choice-2 .has-error .form-control {
+  background: $sb-inline-drawer-form-field-has-error-background-2;
+}
+.background-choice-2 .has-error .form-control:focus {
+  background: $sb-inline-drawer-form-field-has-error-focus-background-2;
+}
+.background-choice-2 .btn-primary,
+.background-choice-2 .btn-primary:active,
+.background-choice-2 .btn-primary:focus,
+.background-choice-2 .btn-primary:hover,
+.background-choice-2 .btn-primary.disabled,
+.background-choice-2 .btn-primary.disabled:hover,
+.background-choice-2 .btn-primary[disabled],
+.background-choice-2 .btn-primary[disabled]:hover {
+  color: $btn-primary-color-2;
+  background-color: $btn-primary-background-color-2;
+}
+.background-choice-2 .btn-default,
+.background-choice-2 .btn-default:active,
+.background-choice-2 .btn-default:focus,
+.background-choice-2 .btn-default:hover,
+.background-choice-2 .btn-default.disabled,
+.background-choice-2 .btn-default.disabled:hover,
+.background-choice-2 .btn-default[disabled],
+.background-choice-2 .btn-default[disabled]:hover {
+  color: $btn-default-color-2;
+  background-color: $btn-default-background-color-2;
+}
+.background-choice-2 .selectize-control.single .selectize-input.input-active,
+.background-choice-2 .selectize-input {
+  background: $sb-inline-drawer-form-field-background-2;
+}
+.background-choice-2 .selectize-dropdown,
+.background-choice-2 .selectize-input,
+.background-choice-2 .selectize-input input {
+  color: $sb-inline-drawer-form-field-color-2;
+}
