@@ -21,6 +21,7 @@ doc/build/
 .mr.developer.cfg
 *.orig
 staticroot
+mediaroot
 celerybeat-schedule.db
 celerybeat.pid
 .cache
