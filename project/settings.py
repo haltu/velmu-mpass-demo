@@ -115,6 +115,7 @@ INSTALLED_APPS = (
     'dreamcards',
     'dreamsso',
     'dreamuserdb',
+    'mpass',
 
     'compressor',
     'rest_framework',

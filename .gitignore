@@ -27,4 +27,5 @@ celerybeat.pid
 .cache
 src/*
 !src/velmu
+!src/mpass
 local_settings.py

@@ -1,0 +1,46 @@
+syntax: glob
+
+.git
+.DS_Store
+parts
+eggs
+bin
+doc/latex
+django_cache
+develop-eggs
+downloads
+html
+*.egg-info
+.installed.cfg
+project/database.db
+project/local_settings.py
+project/staticroot
+project/django_cache
+staticroot
+mediaroot
+cover
+.coverage
+.mr.developer.cfg
+*.pyc
+*.swp
+*.orig
+local_settings.py
+puppet
+Vagrantfile
+newrelic.ini
+supervisord.conf
+.vagrant
+devbox.cfg
+project/devbox.py
+.ropeproject
+src/locale
+src/templates
+celerybeat-schedule
+supervisord.pid
+
+# Unit test / coverage reports
+.tox
+nosetests.html
+
+# Sphinx
+doc/_build
