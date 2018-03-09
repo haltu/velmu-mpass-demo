@@ -23,10 +23,25 @@ class MPASSAPI(object):
 
   def get_authentication_sources(self, lang=None):
     endpoint = '/idp/profile/api/authnsources'
+    if lang is not None:
+      return self._get_request(endpoint, {'lang': lang})
+    else:
+      return self._get_request(endpoint)
+
+  def get_authentication_tags(self, lang=None):
+    endpoint = '/idp/profile/api/authntags'
+    if lang is not None:
+      return self._get_request(endpoint, {'lang': lang})
+    else:
+      return self._get_request(endpoint)
+
+  def _get_request(self, endpoint, params=None):
+    if params is None:
+      params = {}
     headers = {'Accept': 'application/json'}
     try:
-      response = requests.get(self.url + endpoint, headers=headers,
-                              timeout=settings.REQUESTS_TIMEOUT)
+      response = requests.get(self.idp_url + endpoint, params=params,
+                              headers=headers, timeout=settings.REQUESTS_TIMEOUT)
       response.raise_for_status()
       return response.json()
     except requests.RequestException:
@@ -34,6 +49,7 @@ class MPASSAPI(object):
       raise MPASSError
     except ValueError:
       LOG.error('MPASS response was not JSON', exc_info=True, extra={'data': {'response_content': response.content, 'response_status': response.status_code}})
+      raise MPASSError
 
 
 

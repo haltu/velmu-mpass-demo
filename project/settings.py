@@ -118,8 +118,9 @@ INSTALLED_APPS = (
     'mpass',
 
     'compressor',
-    'rest_framework',
     'mptt',
+    'parler',
+    'rest_framework',
 
     'health_check',
     'health_check_celery3',
