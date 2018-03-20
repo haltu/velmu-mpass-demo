@@ -13,6 +13,7 @@ from django.contrib.auth import (
 from django.contrib.auth.views import SuccessURLAllowedHostsMixin
 from django.contrib.sites.shortcuts import get_current_site
 from django.http import HttpResponseRedirect
+from django.shortcuts import resolve_url
 from django.utils.decorators import method_decorator
 from django.utils.http import is_safe_url
 from django.views.decorators.cache import never_cache
@@ -44,7 +45,7 @@ class MPASSLoginView(SuccessURLAllowedHostsMixin, TemplateView):
           "Redirection loop for authenticated user detected. Check that "
           "your LOGIN_REDIRECT_URL doesn't point to a login page."
         )
-        return HttpResponseRedirect(redirect_to)
+      return HttpResponseRedirect(redirect_to)
     return super(MPASSLoginView, self).dispatch(request, *args, **kwargs)
 
   def get(self, request, *args, **kwargs):

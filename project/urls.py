@@ -26,6 +26,7 @@ app_urls = [
 ]
 
 auth_urls = [
+  url(r'login/mpass/', include('mpass.urls.login')),
   url(r'^', include('django.contrib.auth.urls')),
   url(r'', include('dreamsso.urls')),
 ]
