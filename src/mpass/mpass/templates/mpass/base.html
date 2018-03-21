@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block fonts %}
       <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic" rel="stylesheet">
-      <link href="/static/registration/css/font-awesome.css" rel="stylesheet">
       <!--[if IE 7]>
         <link href="/static/registration/css/font-awesome-ie7.min.css" rel="stylesheet">
       <![endif]-->
@@ -16,17 +15,13 @@
     {% block styles %}
       {% compress css %}
       <style>
-      @import "registration/css/normalize";
-      @import "registration/css/components";
-      @import "registration/css/base";
-      @import "registration/css/main";
-      @import "registration/css/topbar";
+      @import "mpass/css/normalize";
+      @import "mpass/css/mpass";
       </style>
       {% endcompress %}
     {% endblock %}
     {% block js %}
-      <script src="{{ DREAMWIDGETURL }}"></script>
-      <script src="/static/registration/js/vendor/modernizr.min.js"></script>
+      <script src="{{ STATIC_URL }}mpass/js/vendor/modernizr-2.6.2.min.js"></script>
     {% endblock %}
   </head>
   <body>
@@ -34,17 +29,6 @@
     {% block body %}
 
       {% block topbar %}
-
-        <div class="topbar">
-          <div class="container">
-
-            {% block topbar_breadcrumbs %}
-              <div class="breadcrumbs">{% spaceless %}{% block topbar_breadcrumbs_content %}{% endblock %}{% endspaceless %}</div>
-            {% endblock %}
-
-          </div><!-- /.container -->
-        </div><!-- /.topbar -->
-
       {% endblock %}
 
       {% block main %}
