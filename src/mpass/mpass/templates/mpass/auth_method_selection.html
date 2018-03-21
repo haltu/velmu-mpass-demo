@@ -10,7 +10,7 @@
 
       <div class="message clearfix">
         {% for auth_source in auth_sources %}
-          <a href="/login/saml?{{ auth_source.shib_auth_selection_parameter }}" class="gadget w1 h1 theme-blue">
+          <a href="/login/saml/?{{ auth_source.shib_auth_selection_parameter }}" class="gadget w1 h1 theme-blue">
             <div class="gadget-container">
               <div class="gadget-title">{{ auth_source.title }}</div>
               <div class="gadget-content">
