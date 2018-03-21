@@ -174,6 +174,8 @@ DREAMUSERDB_DOMAIN = 'http://localhost:8000'
 DREAMUSERDB_CHECK_USERNAME_FORMAT = False
 DREAMSSO_USER_PTR_RELATED_NAME = 'dreamsso_user'
 
+MPASS_IDP_URL = 'https://mpass-proxy-test.csc.fi'
+
 PARLER_LANGUAGES = {
     None: (
         {'code': 'fi',},
