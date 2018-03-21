@@ -174,14 +174,24 @@ DREAMUSERDB_DOMAIN = 'http://localhost:8000'
 DREAMUSERDB_CHECK_USERNAME_FORMAT = False
 DREAMSSO_USER_PTR_RELATED_NAME = 'dreamsso_user'
 
-#from celery.schedules import crontab
-#CELERYBEAT_SCHEDULE = {
-#  # Fully sync dreamcards card visibility nightly
-#  'dreamcards-sync-all-cards': {
-#    'task': 'dreamcards.tasks.sync_all_cards_visibility',
-#    'schedule': crontab(minute=0, hour=1),
-#  },
-#}
+PARLER_LANGUAGES = {
+    None: (
+        {'code': 'fi',},
+        {'code': 'sv',},
+    ),
+    'default': {
+        'fallbacks': ['fi'],          # defaults to PARLER_DEFAULT_LANGUAGE_CODE
+        'hide_untranslated': False,   # the default; let .active_translations() return fallbacks too.
+    }
+}
+
+CELERY_TASK_PROTOCOL = 1  # fixes problems with queuing tasks from celery beat
+CELERY_BEAT_SCHEDULE = {
+  'mpass-sync-auth-sources': {
+    'task': 'mpass.tasks.fetch_mpass_authentication_sources',
+    'schedule': 5*60,  # every 5 minutes
+  },
+}
 
 
 # vim: tabstop=2 expandtab shiftwidth=2 softtabstop=2

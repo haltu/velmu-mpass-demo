@@ -23,6 +23,7 @@ doc/build/
 staticroot
 mediaroot
 celerybeat-schedule.db
+celerybeat-schedule
 celerybeat.pid
 .cache
 src/*

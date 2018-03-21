@@ -43,15 +43,23 @@ class MPASSAPI(object):
       response = requests.get(self.idp_url + endpoint, params=params,
                               headers=headers, timeout=settings.REQUESTS_TIMEOUT)
       response.raise_for_status()
-      return response.json()
-    except requests.RequestException:
+      return response.json()['response']
+    except requests.RequestException as e:
       LOG.exception('MPASS API call failed')
-      raise MPASSError
-    except ValueError:
-      LOG.error('MPASS response was not JSON', exc_info=True, extra={'data': {'response_content': response.content, 'response_status': response.status_code}})
-      raise MPASSError
-
-
+      raise MPASSError(e)
+    except ValueError as e:
+      LOG.error('MPASS response was not JSON', exc_info=True, extra={'data': {
+        'response_content': response.content,
+        'response_status': response.status_code
+      }})
+      raise MPASSError(e)
+    except KeyError as e:
+      LOG.error('MPASS response did not contain response', exc_info=True, extra={
+        'data': {
+          'response_content': response.content,
+          'response_status': response.status_code
+        }})
+      raise MPASSError(e)
 
 
 
