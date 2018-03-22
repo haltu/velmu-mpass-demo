@@ -26,19 +26,10 @@ app_urls = [
 ]
 
 auth_urls = [
-  url(r'login/mpass/', include('mpass.urls.login')),
+  url(r'login/saml/', include('mpass.urls.login')),
   url(r'^', include('django.contrib.auth.urls')),
   url(r'', include('dreamsso.urls')),
 ]
-
-if 'djangosaml2' in settings.INSTALLED_APPS:
-  import djangosaml2.views
-  saml_urls = [
-    url(r'^saml/', include('djangosaml2.urls')),
-    url(r'^saml/echo_attributes/$', djangosaml2.views.echo_attributes),
-  ]
-else:
-  saml_urls = []
 
 static_urls = static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 static_urls += staticfiles_urlpatterns()

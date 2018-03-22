@@ -26,7 +26,7 @@ class AuthenticationSource(TimeStampedModel, TranslatableModel):
 
     @property
     def shib_auth_selection_parameter(self):
-      return 'authnContextClassRef=%s' % self.auth_id
+      return 'authnContextClassRef=urn:mpass.id:authnsource:%s' % self.auth_id
 
     def __str__(self):
         return self.title
@@ -39,6 +39,10 @@ class AuthenticationTag(TimeStampedModel, TranslatableModel):
     translations = TranslatedFields(
       title=models.CharField(max_length=2048)
     )
+
+    @property
+    def shib_auth_selection_parameter(self):
+      return 'authnContextClassRef=urn:mpass.id:authntag:%s' % self.auth_id
 
     def __str__(self):
         return self.title
