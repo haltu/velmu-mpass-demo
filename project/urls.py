@@ -34,7 +34,7 @@ auth_urls = [
 static_urls = static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 static_urls += staticfiles_urlpatterns()
 
-urlpatterns = admin_urls + app_urls + static_urls + auth_urls + saml_urls
+urlpatterns = admin_urls + app_urls + static_urls + auth_urls
 
 if settings.DEBUG:
   from django.views.generic import TemplateView
