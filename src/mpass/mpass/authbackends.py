@@ -2,36 +2,14 @@
 # -*- coding: utf-8 -*-
 
 import logging
+from collections import namedtuple
 from django.contrib.auth.backends import ModelBackend
 from django.utils.text import slugify
-from dreamuserdb.models import User, Organisation, Role
+from dreamuserdb.models import User, Organisation, Role, Group
 
 LOG = logging.getLogger(__name__)
+MPASSRole = namedtuple('MPASSRole', 'org,school_code,group,role')
 
-# Example response from mpass
-# {
-#   "username": "MPASSOID.0f5bf6ac4c8b5fa9f4587",
-#   "first_name": "First",
-#   "last_name": "Last",
-#   "roles": [],
-#   "attributes": [
-#     {
-#       "name": "source_name",
-#       "value": "abc123"
-#     }
-#    ],
-#   "external_id": "abc123"
-# }
-
-
-# Attributes from MPASS IdP
-#MPASS-OID: MPASSOID.3660b479a4d5c65f93744
-#MPASS-givenName: Test
-#MPASS-group: vieras;Saa7;opettajat;8ab b-ruotsi;tino-testaa-2015-10-08;7a
-#MPASS-municipality: Kauniainen
-#MPASS-role: teacher
-#MPASS-school: Kasavuoren Koulu
-#MPASS-surname: Opettaja
 
 class MPASSBackend(ModelBackend):
   source = u'mpass'
@@ -42,19 +20,19 @@ class MPASSBackend(ModelBackend):
   def create_user_obj(self, user_data):
     return User(
       first_name=user_data['HTTP_MPASS_GIVENNAME'] or u'',
-      last_name=user_data['HTTP_MPASS_SURNAME'] or u'',
-      username=user_data['HTTP_MPASS_OID']
+      last_name=user_data['HTTP_MPASS_SN'] or u'',
+      username=user_data['HTTP_MPASS_UID']
     )
 
   def update_user_obj(self, user, user_data):
     user.first_name = user_data['HTTP_MPASS_GIVENNAME'] or u''
-    user.last_name = user_data['HTTP_MPASS_SURNAME'] or u''
+    user.last_name = user_data['HTTP_MPASS_SN'] or u''
     return user
 
   def get_organisation(self, user_data):
     # get an Organisation objects based on user data, creating if necessary
     org_title = user_data['HTTP_MPASS_MUNICIPALITY']
-    org_name = slugify(org_title)
+    org_name = user_data['HTTP_MPASS_MUNICIPALITYCODE']
     try:
       return Organisation.objects.get(name=org_name, source=self.source)
     except Organisation.DoesNotExist:
@@ -63,45 +41,60 @@ class MPASSBackend(ModelBackend):
       return org_obj
 
   def get_roles(self, organisation, user_data):
-    # get a list of roles in organisation user has
-    # currently MPASS only provides one, but it can change
-    role_name = user_data['HTTP_MPASS_ROLE'] or 'student'
-    try:
-      return [Role.objects.get(organisation=organisation, name=role_name)]
-    except Role.DoesNotExist:
-      return [Role.objects.create(organisation=organisation, name=role_name, title=role_name, source=self.source, official=True)]
+    roles = []
+    for mpass_role in self._parse_roles(user_data['MPASS_ROLE']):
+      role_name = mpass_role.role
+      try:
+        roles.append(Role.objects.get(organisation=organisation, name=role_name))
+      except Role.DoesNotExist:
+        roles.append(Role.objects.create(organisation=organisation, name=role_name, title=role_name, source=self.source, official=True))
+    return roles
+
+  def _parse_roles(self, mpass_role_str):
+    # mpass_roles is a list of MPASSRole named tuples
+    return map(lambda x: MPASSRole._make(x.split('|')), mpass_role_str.replace(r'\;', '|').split(';'))
 
   def get_groups(self, organisation, user_data):
-    # return groups for user
-    # groups = user_data['HTTP_MPASS_GROUP'].split(';')
-    return []
+    groups = []
+    for mpass_role in self._parse_roles(user_data['MPASS_ROLE']):
+      group_name = mpass_role.group
+      try:
+        groups.append(Group.objects.get(organisation=organisation, name=group_name))
+      except Role.DoesNotExist:
+        groups.append(Group.objects.create(organisation=organisation, name=group_name, title=group_name, source=self.source, official=True))
+    return groups
+
+  def configure_user(self, user, user_data):
+    return user
 
   def authenticate(self, **credentials):
     if 'request_meta' not in credentials:
       LOG.debug('request_meta not in credentials')
       return None
 
-    if 'HTTP_MPASS_OID' not in credentials['request_meta']:
-      LOG.debug('No HTTP_MPASS_OID in request.META. Check shibboleth')
+    if 'HTTP_MPASS_UID' not in credentials['request_meta']:
+      LOG.debug('No HTTP_MPASS_UID in request.META. Check shibboleth')
       return None
-    elif credentials['request_meta']['HTTP_MPASS_OID'] == '':
-      LOG.debug('No HTTP_MPASS_OID in request.META. Check shibboleth')
+    elif credentials['request_meta']['HTTP_MPASS_UID'] == '':
+      LOG.debug('No HTTP_MPASS_UID in request.META. Check shibboleth')
       return None
 
-    oid = credentials['request_meta']['HTTP_MPASS_OID']
+    oid = credentials['request_meta']['HTTP_MPASS_UID']
     user_data = {}
     keys = [
-        'HTTP_AUTHENTICATOR',
-        'HTTP_AUTHNID',
-        'HTTP_MPASS_OID',
-        'HTTP_MPASS_GIVENNAME',
-        'HTTP_MPASS_SURNAME',
-        'HTTP_MPASS_GROUP',
-        'HTTP_MPASS_ROLE',
-        'HTTP_MPASS_STRUCTUREDROLE',
-        'HTTP_MPASS_SCHOOL',
-        'HTTP_MPASS_MUNICIPALITY',
-        'HTTP_SHIB_AUTHENTICATION_METHOD',
+      'HTTP_MPASS_CLASS',
+      'HTTP_MPASS_CLASSLEVEL',
+      'HTTP_MPASS_CURRENTGIVENNAME',
+      'HTTP_MPASS_GIVENNAME',
+      'HTTP_MPASS_LEGACYCRYPTID',
+      'HTTP_MPASS_LEGACYCRYPTIDE',
+      'HTTP_MPASS_MUNICIPALITY',
+      'HTTP_MPASS_MUNICIPALITYCODE',
+      'HTTP_MPASS_ROLE',
+      'HTTP_MPASS_SCHOOL',
+      'HTTP_MPASS_SCHOOLCODE',
+      'HTTP_MPASS_SN',
+      'HTTP_MPASS_UID',
     ]
     for k in keys:
       value = credentials['request_meta'].get(k, None)
@@ -133,6 +126,13 @@ class MPASSBackend(ModelBackend):
     for r in user.roles.filter(organisation=organisation, source=self.source):
       user.roles.remove(r)
     user.roles.add(*self.get_roles(organisation, user_data))
+
+    # Set groups
+    for g in user.user_groups.filter(organisation=organisation, source=self.source):
+      user.user_groups.remove(g)
+    user.user_groups.add(*self.get_groups(organisation, user_data))
+
+    user = self.configure_user(user, user_data)
 
     return user
 
