@@ -15,7 +15,7 @@ class MPASSBackend(ModelBackend):
   source = u'mpass'
 
   def get_user_obj(self, user_data):
-    return User.objects.get(username=user_data['HTTP_MPASS_OID'])
+    return User.objects.get(username=user_data['HTTP_MPASS_UID'])
 
   def create_user_obj(self, user_data):
     return User(
@@ -42,7 +42,7 @@ class MPASSBackend(ModelBackend):
 
   def get_roles(self, organisation, user_data):
     roles = []
-    for mpass_role in self._parse_roles(user_data['MPASS_ROLE']):
+    for mpass_role in self._parse_roles(user_data['HTTP_MPASS_ROLE']):
       role_name = mpass_role.role
       try:
         roles.append(Role.objects.get(organisation=organisation, name=role_name))
@@ -56,11 +56,11 @@ class MPASSBackend(ModelBackend):
 
   def get_groups(self, organisation, user_data):
     groups = []
-    for mpass_role in self._parse_roles(user_data['MPASS_ROLE']):
+    for mpass_role in self._parse_roles(user_data['HTTP_MPASS_ROLE']):
       group_name = mpass_role.group
       try:
         groups.append(Group.objects.get(organisation=organisation, name=group_name))
-      except Role.DoesNotExist:
+      except Group.DoesNotExist:
         groups.append(Group.objects.create(organisation=organisation, name=group_name, title=group_name, source=self.source, official=True))
     return groups
 
@@ -79,7 +79,7 @@ class MPASSBackend(ModelBackend):
       LOG.debug('No HTTP_MPASS_UID in request.META. Check shibboleth')
       return None
 
-    oid = credentials['request_meta']['HTTP_MPASS_UID']
+    uid = credentials['request_meta']['HTTP_MPASS_UID']
     user_data = {}
     keys = [
       'HTTP_MPASS_CLASS',
@@ -101,19 +101,17 @@ class MPASSBackend(ModelBackend):
       if value is not None:
         value = unicode(value.decode('utf-8'))
       user_data[k] = value
-    LOG.debug('Meta values from educloud', extra={'data': {'request_meta': credentials['request_meta']}})
     LOG.debug('User data from educloud',
-        extra={'data': {'user_data': user_data, 'oid': oid}})
+        extra={'data': {'user_data': user_data, 'uid': uid}})
 
     user = None
-    # 1. Check if we already have user with given OID
+    # 1. Check if we already have user with given uid
     try:
       user = self.get_user_obj(user_data)
       user = self.update_user_obj(user, user_data)
     except User.DoesNotExist:
       # Else we have a new user, lets create it
       user = self.create_user_obj(user_data)
-
     user.save()
 
     # Set organisation
@@ -133,7 +131,6 @@ class MPASSBackend(ModelBackend):
     user.user_groups.add(*self.get_groups(organisation, user_data))
 
     user = self.configure_user(user, user_data)
-
     return user
 
 # vim: tabstop=2 expandtab shiftwidth=2 softtabstop=2
