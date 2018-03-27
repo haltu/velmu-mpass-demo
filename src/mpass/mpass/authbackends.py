@@ -45,10 +45,15 @@ class MPASSBackend(ModelBackend):
     for mpass_role in self._parse_roles(user_data['HTTP_MPASS_ROLE']):
       role_name = mpass_role.role
       try:
-        roles.append(Role.objects.get(organisation=organisation, name=role_name))
+        role = Role.objects.get(organisation=organisation, name=role_name)
       except Role.DoesNotExist:
-        roles.append(Role.objects.create(organisation=organisation, name=role_name, title=role_name, source=self.source, official=True))
+        role = Role.objects.create(organisation=organisation, name=role_name, title=role_name, source=self.source, official=True)
+      role = self.configure_role(role, user_data)
+      roles.append(role)
     return roles
+
+  def configure_role(self, role, user_data):
+    return role
 
   def _parse_roles(self, mpass_role_str):
     # mpass_roles is a list of MPASSRole named tuples
@@ -63,9 +68,6 @@ class MPASSBackend(ModelBackend):
       except Group.DoesNotExist:
         groups.append(Group.objects.create(organisation=organisation, name=group_name, title=group_name, source=self.source, official=True))
     return groups
-
-  def configure_user(self, user, user_data):
-    return user
 
   def authenticate(self, **credentials):
     if 'request_meta' not in credentials:
@@ -131,6 +133,9 @@ class MPASSBackend(ModelBackend):
     user.user_groups.add(*self.get_groups(organisation, user_data))
 
     user = self.configure_user(user, user_data)
+    return user
+
+  def configure_user(self, user, user_data):
     return user
 
 # vim: tabstop=2 expandtab shiftwidth=2 softtabstop=2
