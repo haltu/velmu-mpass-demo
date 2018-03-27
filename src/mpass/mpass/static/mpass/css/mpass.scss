@@ -1,90 +1,242 @@
-  .message {
-    padding: 20px 0;
-  }
-  .gadget {
-    position: relative;
-    float: left;
-    margin: 0 10px 10px 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: block;
-  }
-  .h1 {
-    height: 110px;
-  }
-  .w1 {
-    width: 110px;
-  }
-  .gadget-container {
-    position: relative;
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    font-size: 16px;
+    background-color: #4EC8FB;
+}
+
+h4.mpass {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.logo {
+    margin-top: 30px;
+    margin-bottom: 3px;
+}
+
+
+.info {
+    margin-top: 40px;
+    margin-bottom: 3px;
+}
+
+#myBtn {
+    background: #ffffff;
+    color: #D46791;
+    padding: 3px 10px 3px 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 15px;
+    border-color: #D46791;
+    float: right;
+    outline: none;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    background-color: #FFF;
-    color: #333;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-  .gadget-title {
+    overflow: auto;
+    background-color: rgb(53,140,200); /* Fallback color */
+    background-color: rgba(53,140,200,0.6);
+}
+
+.modal-content {
+    background-color: #ffffff;
+    color: #333333;
+    margin: 15% auto;
+    padding: 5px;
+    border: 1px solid #888888;
+    width: 80%;
+    line-height: 1.5em;
+}
+
+.close {
+    color: #000000;
+    float: right;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+
+}
+
+.modal-header {
+    background-color: #D46791;
+    color: white;
+}
+
+.modal-body {padding: 10px;}
+
+.top-area {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 5px;
+    margin-bottom: 30px;
+}
+
+.row.grid_gutter {
+    margin-left: -3px;
+    margin-right: -3px;
+}
+.row.grid_gutter [class*="col-"] {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.auth-selection .btn {
+    position: relative;
+    height: 150px;
+    line-height: 100px;
+    background-color: #ffffff;
+    padding-right: 2px;
+    padding-top: 14px;
+    padding-bottom: 5px;
+    margin: 10px;
+    color: #358CC8;
+    border: 1px solid #358CC8;
+    overflow: hidden;
+}
+
+.auth-selection .title {
     position: absolute;
+    bottom: 5px;
     left: 0;
     right: 0;
-    bottom: 0;
-    height: 27px;
-    line-height: 27px;
-    margin: 0;
-    padding: 0 5px;
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    text-overflow: ellipsis;
-    text-align: center;
-    background-color: #FFF;
-    color: #333;
-    border-bottom: 3px solid #333;
-  }
-  .theme-blue .gadget-title {
-    border-color: #245C99;
-    color: #245C99;
-  }
-  .gadget-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 30px;
-  }
-  .gadget-bookmark {
-    display: table;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-  .gadget-bookmark > * {
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle;
-  }
-  img {
-    border: 0;
-    -ms-interpolation-mode: bicubic;
-    vertical-align: middle;
-  }
-  .gadget-bookmark img {
-    display: block;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-  .gadget.h1 .gadget-bookmark img {
-    max-height: 60px;
-    max-width: 90px;
-  }
-  .topbar .breadcrumbs .service-logo {
-    height: 50px; 
-    display: block;
-    float: left;
-    margin-right: 4px;
-  }
+    padding: 0 10px;
+}
+
+.auth-selection img {
+  max-height: 100px;
+  max-width: 85%;
+  vertical-align: middle;
+}
+
+.btn:hover, .btn:focus .btn:active {
+    background: #ffffff;
+    border: 1px solid #D46791;
+    box-shadow: inset 0 -3px #D46791;
+}
+
+
+.btn-default:active:focus {
+    background: #ffffff;
+    border: 1px solid #358CC8;
+    box-shadow: inset 0 -3px #358CC8;
+}
+
+.cloud {
+    z-index:51;
+    position:fixed;
+    background: white;
+    width: 250px;
+    height: 250px;
+    border-radius:50%;
+    box-shadow:
+    0px -1px 0px 10px rgba(53, 140, 200, .3),
+    0px -1px 0px 20px rgba(53, 140, 200, .2),
+    0px -1px 0px 30px rgba(53, 140, 200, .1);
+    bottom:-100px;
+    left:-150px;
+}
+
+.cloud2 {
+    z-index:50;
+    position:fixed;
+    background: white;
+    width: 230px;
+    height: 230px;
+    border-radius:50%;
+    box-shadow:
+    0px -1px 0px 10px rgba(53, 140, 200, .3),
+    0px -1px 0px 20px rgba(53, 140, 200, .2),
+    0px -1px 0px 30px rgba(53, 140, 200, .1);
+    margin-left:170px;
+    margin-bottom:-50px;
+    bottom:-100px;
+    left:-150px;
+}
+
+.cloud3 {
+    z-index:52;
+    position:fixed;
+    background: #ffffff;
+    width: 230px;
+    height: 230px;
+    border-radius:50%;
+    box-shadow:none !important;
+    z-index:51;
+    margin-left:170px;
+    margin-bottom:-50px;
+    bottom:-100px;
+    left:-150px;
+}
+
+.cloud4 {
+    z-index:50;
+    position:fixed;
+    background: white;
+    width: 220px;
+    height: 220px;
+    border-radius:50%;
+    box-shadow:
+    0px -1px 0px 10px rgba(53, 140, 200, .3),
+    0px -1px 0px 20px rgba(53, 140, 200, .2),
+    0px -1px 0px 30px rgba(53, 140, 200, .1);
+    margin-left:310px;
+    margin-bottom:-100px;
+    bottom:-90px;
+    left:-150px;
+}
+
+footer {
+    background-color: #4EC8FB;
+    padding-top: 120px;
+}
+
+
+@media screen and (max-width: 992px) {
+    .auth-selection .btn {
+        margin: 5px 0;
+        height: 80px;
+        line-height: 80px;
+        padding: 5px;
+    }
+    .auth-selection .img-container {
+      position: absolute;
+      left: 9px;
+      top: 9px;
+      bottom: 10px;
+      line-height: 60px;
+      height: 60px;
+      width: 60px;
+
+    }
+    .auth-selection img {
+      max-height: 60px;
+      max-width: 60px;
+
+    }
+    .auth-selection .title {
+      position: static;
+      height: 70px;
+      line-height: 70px;
+      padding: 0 80px;
+
+    }
+}
+
+

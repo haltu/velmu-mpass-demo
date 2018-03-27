@@ -16,6 +16,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import resolve_url
 from django.utils.decorators import method_decorator
 from django.utils.http import is_safe_url
+from django.utils.translation import get_language_from_request
 from django.views.decorators.cache import never_cache
 from django.views.decorators.debug import sensitive_post_parameters
 from django.views.generic import TemplateView
@@ -77,7 +78,9 @@ class MPASSLoginView(SuccessURLAllowedHostsMixin, TemplateView):
 
   def get_context_data(self, **kwargs):
       context = super(MPASSLoginView, self).get_context_data(**kwargs)
-      auth_sources = AuthenticationSource.objects.all()
+      lang = get_language_from_request(self.request)
+      print(lang)
+      auth_sources = AuthenticationSource.objects.active_translations(lang).order_by('translations__title').distinct()
       current_site = get_current_site(self.request)
       context.update({
           self.redirect_field_name: self.get_redirect_url(),
