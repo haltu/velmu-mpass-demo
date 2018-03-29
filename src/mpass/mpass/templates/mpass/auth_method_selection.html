@@ -28,7 +28,7 @@
     {% for auth_source in auth_sources %}
       <a href="/Shibboleth.sso/Login?{{ auth_source.shib_auth_selection_parameter }}&target=/login/saml/">
         <div class="col-xs-12 col-md-2 btn btn-default">
-          <div class="img-container"><img src="{{ auth_source.icon_url }}"></div>
+        <div class="img-container"><img src="{% if auth_source.icon_url %}{{ auth_source.icon_url }}{% else %}{{ STATIC_URL }}mpass/img/mpass_default.png{% endif %}"></div>
           <div class="title">{{ auth_source.title }}</div>
         </div>
       </a>
