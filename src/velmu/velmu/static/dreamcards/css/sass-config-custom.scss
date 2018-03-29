@@ -5,19 +5,19 @@
 // sidebar
 $sb-logo-image: url(/static/dreamcards/img/logo.png);
 $sb-main-logo-margin: 12px 0 10px;
-$sb-main-background: #546E7A;
-$sb-main-button-color: #fff;
-$sb-main-button-hover-color: #FF9100;
+$sb-main-background: #fff;
+$sb-main-button-color: #01caff;
+$sb-main-button-hover-color: #e3518e;
 $sb-main-button-hover-background: $sb-main-background;
 $sb-main-button-bin-background: $sb-main-button-color;
 $sb-drawer-color: #fff;
-$sb-drawer-background: #49B3E8;
-$sb-drawer-item-selected-background: #40AAD3;
+$sb-drawer-background: #007ec6;
+$sb-drawer-item-selected-background: #0071b2;
 $sb-drawer-item-button-color: #fff;
 $sb-drawer-heading-background: $sb-drawer-background;
 $sb-drawer-heading-border-bottom: 0;
 $sb-drawer-heading-height: 50px;
-$sb-inline-drawer-background-color: #9ED3E8;
+$sb-inline-drawer-background-color: #01caff;
 $sb-inline-drawer-border-bottom: 0;
 $sb-inline-drawer-before-border-top: 0;
 $sb-inline-drawer-form-field-border: 0;
@@ -31,7 +31,7 @@ $sb-inline-drawer-form-field-has-error-focus-background: $sb-drawer-color;
 $btn-primary-color: #fff;
 $btn-primary-background-color: $sb-main-button-hover-color;
 $btn-default-color: #fff;
-$btn-default-background-color: $sb-main-background;
+$btn-default-background-color: #1e3250;
 
 // card grid
 $main-content-grid-sizer-width: 180px;

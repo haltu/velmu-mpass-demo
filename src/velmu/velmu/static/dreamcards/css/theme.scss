@@ -21,35 +21,13 @@ html {
   background: #eee;
 }
 .background-choice-1 {
-  background: #eee;
+  background: #eee url(/static/dreamcards/img/mpass_bg1.jpg) bottom right / cover no-repeat fixed;
   z-index: -1;
   &-btn {
     background: #eee;
     background: #eee url(/static/dreamcards/img/bg-1-preview.png) no-repeat center center;
     background-size: cover;
   }
-}
-.background-choice-1 body:before {
-  content: "";
-  display: block;
-  position: absolute;
-  right: 0;
-  left: 50px;
-  bottom: 0;
-  height: 75px;
-  background: #b36500;
-  z-index: -1;
-}
-.background-choice-1 body:after {
-  content: "";
-  display: block;
-  position: absolute;
-  right: 75px;
-  left: 50px;
-  top: 0;
-  bottom: 75px;
-  background: transparent url(/static/dreamcards/img/bg-1.png) no-repeat right bottom;
-  z-index: -1;
 }
 .background-choice-2 {
   background: #A9E3D9;
