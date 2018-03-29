@@ -48,7 +48,7 @@ LOCALE_PATHS = (
   os.path.join(BASEDIR, 'locale'),
 )
 
-LOGIN_URL = '/login/'
+LOGIN_URL = '/login/mpass/'
 LOGIN_REDIRECT_URL = '/'
 
 STATICFILES_DIRS = (
