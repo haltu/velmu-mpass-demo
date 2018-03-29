@@ -29,7 +29,7 @@ class AuthenticationSource(TimeStampedModel, TranslatableModel):
       return 'authnContextClassRef=urn:mpass.id:authnsource:%s' % self.auth_id
 
     def __str__(self):
-        return self.title
+        return self.auth_id
 
 
 @python_2_unicode_compatible
@@ -45,8 +45,23 @@ class AuthenticationTag(TimeStampedModel, TranslatableModel):
       return 'authnContextClassRef=urn:mpass.id:authntag:%s' % self.auth_id
 
     def __str__(self):
-        return self.title
+        return self.tag_id
 
+
+@python_2_unicode_compatible
+class Service(TimeStampedModel, TranslatableModel):
+    """MPASS Service."""
+    service_id = models.CharField(max_length=128)
+    icon_url = models.CharField(max_length=2048, blank=True, null=True)
+    service_url = models.CharField(max_length=2048, blank=True, null=True)
+    sso_url = models.CharField(max_length=2048, blank=True, null=True)
+    translations = TranslatedFields(
+      description=models.CharField(max_length=2048),
+      title=models.CharField(max_length=2048)
+    )
+
+    def __str__(self):
+        return self.service_id
 
 # vim: tabstop=2 expandtab shiftwidth=2 softtabstop=2
 

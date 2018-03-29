@@ -35,6 +35,13 @@ class MPASSAPI(object):
     else:
       return self._get_request(endpoint)
 
+  def get_services(self, lang=None):
+    endpoint = '/idp/profile/api/services'
+    if lang is not None:
+      return self._get_request(endpoint, {'lang': lang})
+    else:
+      return self._get_request(endpoint)
+
   def _get_request(self, endpoint, params=None):
     if params is None:
       params = {}
