@@ -193,6 +193,10 @@ CELERY_BEAT_SCHEDULE = {
     'task': 'mpass.tasks.fetch_mpass_authentication_sources',
     'schedule': 5*60,  # every 5 minutes
   },
+  'mpass-sync-services': {
+    'task': 'mpass.tasks.fetch_mpass_services',
+    'schedule': 5*60,  # every 5 minutes
+  },
 }
 
 
