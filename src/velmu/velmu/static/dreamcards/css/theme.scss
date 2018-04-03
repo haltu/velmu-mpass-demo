@@ -21,11 +21,11 @@ html {
   background: #eee;
 }
 .background-choice-1 {
-  background: #eee url(/static/dreamcards/img/mpass_bg1.jpg) bottom right / cover no-repeat fixed;
+  background: #eee url(/static/dreamcards/img/mpass_bg1.png) bottom right / cover no-repeat fixed;
   z-index: -1;
   &-btn {
     background: #eee;
-    background: #eee url(/static/dreamcards/img/bg-1-preview.png) no-repeat center center;
+    background: #eee url(/static/dreamcards/img/mpass_bg1_preview.png) no-repeat center center;
     background-size: cover;
   }
 }
