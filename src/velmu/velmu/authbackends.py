@@ -26,21 +26,6 @@ class VelmuMPASSBackend(MPASSBackend):
     )
     return service
 
-  def configure_user(self, user, user_data):
-    # mutate user into a dreamsso.User
-    user = User.objects.get(pk=user.pk)
-
-    # add dreamcards groups for card sharing
-    dreamcards_groups = []
-    for mpass_role in self._parse_roles(user_data['HTTP_MPASS_ROLE']):
-      group_name = mpass_role.group
-      try:
-        dreamcards_groups.append(UserGroup.objects.get(name=group_name))
-      except UserGroup.DoesNotExist:
-        dreamcards_groups.append(UserGroup.objects.create(name=group_name))
-    user.usergroups.set(dreamcards_groups)
-    return user
-
   def get_user(self, pk):
     # Django authentication middleware populates request.user
     # using this method

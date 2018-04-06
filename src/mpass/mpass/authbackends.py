@@ -107,7 +107,7 @@ class MPASSBackend(ModelBackend):
         extra={'data': {'user_data': user_data, 'uid': uid}})
 
     user = None
-    # 1. Check if we already have user with given uid
+    # Check if we already have user with given uid
     try:
       user = self.get_user_obj(user_data)
       user = self.update_user_obj(user, user_data)
@@ -137,6 +137,11 @@ class MPASSBackend(ModelBackend):
 
   def configure_user(self, user, user_data):
     return user
+
+  def get_user(self, pk):
+    # Django authentication middleware populates request.user
+    # using this method
+    return User.objects.get(pk=pk)
 
 # vim: tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
