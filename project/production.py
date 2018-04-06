@@ -29,8 +29,8 @@ SENTRY_SITE = 'app'
 # wrap template loaders inside cached loader
 TEMPLATES[0]['OPTIONS']['loaders'] = [('django.template.loaders.cached.Loader', TEMPLATES[0]['OPTIONS']['loaders'])]
 
-DREAM_APP_URL = 'https://velmu.fi'
-DREAM_APP_HOSTNAME = 'velmu.fi'
+DREAM_APP_URL = 'https://demo.velmu.fi'
+DREAM_APP_HOSTNAME = 'demo.velmu.fi'
 
 # Compress
 COMPRESS_ENABLED = True

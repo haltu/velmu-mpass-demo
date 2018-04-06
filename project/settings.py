@@ -173,6 +173,9 @@ DREAMCARDS_CARD_SERIALIZERS = {}
 DREAMUSERDB_DOMAIN = 'http://localhost:8000'
 DREAMUSERDB_CHECK_USERNAME_FORMAT = False
 DREAMSSO_USER_PTR_RELATED_NAME = 'dreamsso_user'
+DREAM_APP_URL = 'https://demo.velmu.fi'
+DREAM_APP_HOSTNAME = 'demo.velmu.fi'
+VELMU_APP_URL = DREAM_APP_URL
 
 MPASS_IDP_URL = 'https://mpass-proxy-test.csc.fi'
 

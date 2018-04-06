@@ -9,6 +9,7 @@ from django.utils.timezone import now
 from django.utils.translation import activate
 from dreamcards.models import Card, Category
 from mpass.models import Service
+from velmu import settings
 
 LOG = logging.getLogger(__name__)
 MPASS_CARD_CATEGORY = 'MPASS'
@@ -20,7 +21,9 @@ def services_updated_handler(**kwargs):
   API
   """
   activate('fi')
-  services = Service.objects.active_translations('fi')
+  services = Service.objects.active_translations('fi').exclude(
+    service_url__icontains=settings.APP_URL
+  )
   card_qs = Card.objects.filter(
     category__title=MPASS_CARD_CATEGORY, owner__isnull=True
   )
@@ -30,10 +33,8 @@ def services_updated_handler(**kwargs):
       _update_mpass_service_card(card_qs.get(url=service.sso_url), service)
     except Card.DoesNotExist:
       _create_mpass_service_card(service)
-  # deactivate cards in MPASS category if there no longer was a service for it
-  for card in card_qs.filter(modified__lt=start_time):
-    card.active = False
-    card.save()
+  # delete cards in MPASS category if there no longer was a service for it
+  card_qs.filter(modified__lt=start_time).delete()
 
 
 def _update_mpass_service_card(instance, service):
