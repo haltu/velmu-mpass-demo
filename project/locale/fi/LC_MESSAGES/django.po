@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-16 17:50+0200\n"
+"POT-Creation-Date: 2018-04-09 16:49+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,69 +43,69 @@ msgstr ""
 msgid "Attach card(s) to the desktop of every user"
 msgstr ""
 
-#: dream-cards/dreamcards/models.py:23
+#: dream-cards/dreamcards/models.py:25
 msgid "grey"
 msgstr ""
 
-#: dream-cards/dreamcards/models.py:24
+#: dream-cards/dreamcards/models.py:26
 msgid "blue"
 msgstr ""
 
-#: dream-cards/dreamcards/models.py:25
+#: dream-cards/dreamcards/models.py:27
 msgid "red"
 msgstr ""
 
-#: dream-cards/dreamcards/models.py:26
+#: dream-cards/dreamcards/models.py:28
 msgid "green"
 msgstr ""
 
-#: dream-cards/dreamcards/models.py:27
+#: dream-cards/dreamcards/models.py:29
 msgid "orange"
 msgstr ""
 
-#: dream-cards/dreamcards/models.py:28
+#: dream-cards/dreamcards/models.py:30
 msgid "pink"
 msgstr ""
 
-#: dream-cards/dreamcards/models.py:29
+#: dream-cards/dreamcards/models.py:31
 msgid "purple"
 msgstr ""
 
-#: dream-cards/dreamcards/models.py:62 dream-cards/dreamcards/models.py:183
-#: dream-cards/dreamcards/models.py:246
+#: dream-cards/dreamcards/models.py:65 dream-cards/dreamcards/models.py:186
+#: dream-cards/dreamcards/models.py:249
 msgid "Title"
 msgstr "Otsikko"
 
-#: dream-cards/dreamcards/models.py:63
+#: dream-cards/dreamcards/models.py:66
 msgid "URL"
 msgstr "URL"
 
-#: dream-cards/dreamcards/models.py:64 dream-cards/dreamcards/models.py:157
+#: dream-cards/dreamcards/models.py:67 dream-cards/dreamcards/models.py:160
 msgid "Thumbnail"
 msgstr "Kuva"
 
-#: dream-cards/dreamcards/models.py:67 dream-cards/dreamcards/models.py:193
+#: dream-cards/dreamcards/models.py:70 dream-cards/dreamcards/models.py:196
 msgid "Category"
 msgstr "Kategoria"
 
-#: dream-cards/dreamcards/models.py:68 dream-cards/dreamcards/models.py:184
-#: dream-cards/dreamcards/models.py:247
+#: dream-cards/dreamcards/models.py:71 dream-cards/dreamcards/models.py:187
+#: dream-cards/dreamcards/models.py:250
 msgid "Owner"
 msgstr "Omistaja"
 
-#: dream-cards/dreamcards/models.py:68
+#: dream-cards/dreamcards/models.py:71
 msgid "Card with no owner is a system card visible to everyone."
 msgstr "Kortti ilman omistajaa on systeemin kortti joka näkyy kaikille."
 
-#: dream-cards/dreamcards/models.py:71
+#: dream-cards/dreamcards/models.py:74
 msgid "Card type"
 msgstr "Kortin tyyppi"
 
-#: dream-cards/dreamcards/models.py:72 dream-cards/dreamcards/models.py:187
+#: dream-cards/dreamcards/models.py:75 dream-cards/dreamcards/models.py:190
 msgid "Language"
 msgstr "Kieli"
 
-#: dream-cards/dreamcards/models.py:72
+#: dream-cards/dreamcards/models.py:75
 msgid ""
 "If a language is selected, card is displayed ONLY if user is using that "
 "language."
@@ -113,56 +113,57 @@ msgstr ""
 "Jos kortin kieli on valittuna, kortti näkyy ainoastaan jos käyttäjä on "
 "valinnut kyseisen kielen käyttöliittymästä."
 
-#: dream-cards/dreamcards/models.py:74
+#: dream-cards/dreamcards/models.py:77
 msgid "Shared to groups"
 msgstr ""
 
-#: dream-cards/dreamcards/models.py:74
+#: dream-cards/dreamcards/models.py:77
 msgid "Groups this card is shared to"
 msgstr ""
 
-#: dream-cards/dreamcards/models.py:76
+#: dream-cards/dreamcards/models.py:79
 msgid "Shared to users"
 msgstr ""
 
-#: dream-cards/dreamcards/models.py:76
+#: dream-cards/dreamcards/models.py:79
 msgid "Users this card is directly shared to"
 msgstr ""
 
-#: dream-cards/dreamcards/models.py:77
+#: dream-cards/dreamcards/models.py:80
 msgid "Default for new users"
 msgstr "Oletuskortti uusille käyttäjille"
 
-#: dream-cards/dreamcards/models.py:77
+#: dream-cards/dreamcards/models.py:80
 msgid "Attach this card automatically in a new user's desktop"
 msgstr "Liitä tämä kortti automaattisesti uusien käyttäjien työpöydälle"
 
-#: dream-cards/dreamcards/models.py:78
+#: dream-cards/dreamcards/models.py:81
 msgid "Permission"
 msgstr "Näkyvyys"
 
-#: dream-cards/dreamcards/models.py:78
+#: dream-cards/dreamcards/models.py:81
 msgid ""
 "Limit visibility of card to users with permission. If a permission is "
 "selected, ONLY users with that permission can see the card."
-msgstr "Rajoita kortin näkyvyys käyttäjille joilla on tämä oikeus. Jos oikeutta ei ole valittu, "
-"kortti näkyy kaikille käyttäjille."
+msgstr ""
+"Rajoita kortin näkyvyys käyttäjille joilla on tämä oikeus. Jos oikeutta ei "
+"ole valittu, kortti näkyy kaikille käyttäjille."
 
-#: dream-cards/dreamcards/models.py:85 dream-cards/dreamcards/models.py:219
+#: dream-cards/dreamcards/models.py:88 dream-cards/dreamcards/models.py:222
 msgid "Card"
 msgstr "Kortti"
 
-#: dream-cards/dreamcards/models.py:86 dream-cards/dreamcards/models.py:208
+#: dream-cards/dreamcards/models.py:89 dream-cards/dreamcards/models.py:211
 msgid "Cards"
 msgstr "Kortit"
 
-#: dream-cards/dreamcards/models.py:184
+#: dream-cards/dreamcards/models.py:187
 msgid "Category with no owner is a system category visible to everyone."
 msgstr ""
 "Kategoria ilman omistajaa on systeemin kategoria joka näkyy kaikille "
 "käyttäjille."
 
-#: dream-cards/dreamcards/models.py:187
+#: dream-cards/dreamcards/models.py:190
 msgid ""
 "If a language is selected, category is displayed ONLY if user is using that "
 "language."
@@ -170,51 +171,52 @@ msgstr ""
 "Jos kategorian kieli on valittuna, kategoria näkyy ainoastaan jos käyttäjä "
 "on valinnut kyseisen kielen käyttöliittymästä."
 
-#: dream-cards/dreamcards/models.py:194
+#: dream-cards/dreamcards/models.py:197
 msgid "Categories"
 msgstr "Kategoriat"
 
-#: dream-cards/dreamcards/models.py:202
+#: dream-cards/dreamcards/models.py:205
 msgid "Amount of cards"
 msgstr "Korttien lukumäärä"
 
-#: dream-cards/dreamcards/models.py:206
+#: dream-cards/dreamcards/models.py:209
 msgid "Cards in this category"
 msgstr "Kortit kategoriassa"
 
-#: dream-cards/dreamcards/models.py:220 dream-cards/dreamcards/models.py:255
+#: dream-cards/dreamcards/models.py:223 dream-cards/dreamcards/models.py:258
 msgid "Page"
 msgstr "Sivu"
 
-#: dream-cards/dreamcards/models.py:222
+#: dream-cards/dreamcards/models.py:225
 msgid "Size X"
 msgstr "Koko X"
 
-#: dream-cards/dreamcards/models.py:223
+#: dream-cards/dreamcards/models.py:226
 msgid "Size Y"
 msgstr "Koko Y"
 
-#: dream-cards/dreamcards/models.py:224
+#: dream-cards/dreamcards/models.py:227
 msgid "Order"
 msgstr "Järjestys"
 
-#: dream-cards/dreamcards/models.py:256
+#: dream-cards/dreamcards/models.py:259
 msgid "Pages"
 msgstr "Sivut"
 
-#: dream-cards/dreamcards/models.py:264
+#: dream-cards/dreamcards/models.py:267
 msgid "Start page"
 msgstr "Aloitussivu"
 
-#: dream-cards/dreamcards/models.py:279
+#: dream-cards/dreamcards/models.py:282
 msgid "UserGroup"
 msgstr ""
 
-#: dream-cards/dreamcards/models.py:280
+#: dream-cards/dreamcards/models.py:283
 msgid "UserGroups"
 msgstr ""
 
-#: dream-cards/dreamcards/templates/dreamcards/base.html:31
+#: dream-cards/dreamcards/templates/dreamcards/base.html:32
+#: mpass/mpass/templates/mpass/base.html:7
 msgid "#service-name"
 msgstr "Velmu"
 
@@ -366,22 +368,22 @@ msgstr ""
 msgid "Please try again tomorrow."
 msgstr ""
 
-#: haltu-djangosaml2/djangosaml2/templates/djangosaml2/error.html:9
-msgid "Error"
-msgstr ""
-
-#: haltu-djangosaml2/djangosaml2/templates/djangosaml2/error.html:10
-msgid "We are sorry but there was an error in your session. Please try again"
-msgstr ""
-
-#: haltu-djangosaml2/djangosaml2/templates/djangosaml2/timeout_error.html:9
-msgid "Timeout error"
-msgstr ""
-
-#: haltu-djangosaml2/djangosaml2/templates/djangosaml2/timeout_error.html:10
-msgid "We are sorry but your session has timed out. Please try again"
-msgstr ""
-
 #: haltu-utils/hutils/admin_list_filters.py:11
 msgid "user"
+msgstr ""
+
+#: mpass/mpass/templates/mpass/auth_method_selection.html:4
+msgid "MPASS login"
+msgstr ""
+
+#: mpass/mpass/templates/mpass/auth_method_selection.html:16
+msgid "Kirjautumistavan valinta"
+msgstr ""
+
+#: mpass/mpass/templates/mpass/auth_method_selection.html:18
+msgid "Käytä kirjautumiseen kuntakohtaista kirjautumistapaa."
+msgstr ""
+
+#: mpass/mpass/templates/mpass/auth_method_selection.html:19
+msgid "Ongelmatilanteissa ota yhteyttä"
 msgstr ""
