@@ -45,7 +45,7 @@ def _update_mpass_service_card(instance, service):
     setattr(instance, key, value)
   instance.active = True
   instance.save()
-  if instance.thumbnail is None:
+  if not instance.thumbnail:
     _fetch_and_save_card_icon(instance, service)
   return instance
 
