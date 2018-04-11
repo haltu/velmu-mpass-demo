@@ -125,6 +125,12 @@ h4.mpass {
   vertical-align: middle;
 }
 
+.auth-selection .disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  filter: grayscale(1);
+}
+
 .btn:hover, .btn:focus .btn:active {
     background: #ffffff;
     border: 1px solid #D46791;

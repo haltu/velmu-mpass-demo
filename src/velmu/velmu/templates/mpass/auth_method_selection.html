@@ -1,0 +1,11 @@
+{% extends "mpass/auth_method_selection.html" %}
+{% load i18n compress %}
+
+{% block auth_methods %}
+  <a href="/Shibboleth.sso/Login?{{ auth_source.shib_auth_selection_parameter }}&target=/login/saml/">
+    <div class="col-xs-12 col-md-2 btn btn-default{% if auth_source.auth_id != "ShibLdap" %} disabled{% endif %}">
+      <div class="img-container"><img src="{% if auth_source.icon_url %}{{ auth_source.icon_url }}{% else %}{{ STATIC_URL }}mpass/img/mpass_default.png{% endif %}"></div>
+      <div class="title">{{ auth_source.title }}</div>
+    </div>
+  </a>
+{% endblock %}
