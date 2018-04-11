@@ -1,0 +1,2 @@
+#!/bin/sh
+DJANGO_SETTINGS_MODULE=project.${test:settings} bin/py.test -v -s --ff --cov-report term-missing --cov-report html:coverage --cov={{ cookiecutter.project_app_name }} --no-cov-on-fail --color=yes --nomigrations

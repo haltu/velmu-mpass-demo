@@ -1,0 +1,49 @@
+{% load i18n compress %}
+<!DOCTYPE html>
+<html class="{% block html_class %}{% endblock %}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{% block meta_title %}{% endblock %} - {% trans "#service-name" %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block fonts %}
+      <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic" rel="stylesheet">
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <!--[if IE 7]>
+        <link href="/static/registration/css/font-awesome-ie7.min.css" rel="stylesheet">
+      <![endif]-->
+    {% endblock %}
+    {% block styles %}
+      {% compress css %}
+      <style>
+      @import "mpass/css/normalize";
+      @import "mpass/css/mpass";
+      </style>
+      {% endcompress %}
+    {% endblock %}
+    {% block js %}
+      <script src="{{ STATIC_URL }}mpass/js/vendor/modernizr-2.6.2.min.js"></script>
+    {% endblock %}
+  </head>
+  <body>
+
+    {% block body %}
+
+      {% block topbar %}
+      {% endblock %}
+
+      {% block main %}
+      {% endblock %}
+
+      {% block extra %}
+      {% endblock %}
+
+      {% block js_bottom %}
+      {% endblock %}
+
+    {% endblock %}
+
+  </body>
+</html>
+
