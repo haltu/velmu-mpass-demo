@@ -1,13 +1,27 @@
 
 # -*- coding: utf-8 -*-
 
+import uuid
 from dreamcards.models import UserGroup
 from dreamsso.models import User
 from dreamuserdb.models import Service, ServicePermission
 from mpass.authbackends import MPASSBackend
+from velmu import settings
 
 
 class VelmuMPASSBackend(MPASSBackend):
+  def get_user_obj(self, user_data):
+    mpass_uid = user_data['HTTP_MPASS_UID']
+    if mpass_uid in settings.PERSISTENT_ACCOUNTS:
+      return User.objects.get(username=mpass_uid)
+    # public demo credentials always create new accounts when logging in
+    return User(
+      first_name=user_data['HTTP_MPASS_GIVENNAME'] or u'',
+      last_name=user_data['HTTP_MPASS_SN'] or u'',
+      username='demo/%s' % uuid.uuid4(),
+      external_id=mpass_uid,
+    )
+
   def configure_role(self, role, _user_data):
     # Add card sharing permission
     permission, _created = ServicePermission.objects.get_or_create(
