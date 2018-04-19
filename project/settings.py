@@ -177,6 +177,8 @@ DREAM_APP_URL = 'https://demo.velmu.fi'
 DREAM_APP_HOSTNAME = 'demo.velmu.fi'
 VELMU_APP_URL = DREAM_APP_URL
 
+VELMU_PERSISTENT_ACCOUNTS = ['MPASSOID.3ca7cd6537d24c7249c05',]
+
 MPASS_IDP_URL = 'https://mpass-proxy-test.csc.fi'
 
 PARLER_LANGUAGES = {
