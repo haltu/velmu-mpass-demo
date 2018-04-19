@@ -3,8 +3,8 @@
 
 import uuid
 from dreamcards.models import UserGroup
-from dreamsso.models import User
-from dreamuserdb.models import Service, ServicePermission
+from dreamsso.models import User as SSOUser
+from dreamuserdb.models import Service, ServicePermission, User
 from mpass.authbackends import MPASSBackend
 from velmu import settings
 
@@ -43,7 +43,7 @@ class VelmuMPASSBackend(MPASSBackend):
   def get_user(self, pk):
     # Django authentication middleware populates request.user
     # using this method
-    return User.objects.get(pk=pk)
+    return SSOUser.objects.get(pk=pk)
 
 # vim: tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
